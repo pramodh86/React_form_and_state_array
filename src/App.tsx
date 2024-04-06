@@ -16,6 +16,11 @@ function App() {
    
   }
   
+  const handleClickCloseButton = (item:any) => {
+
+    console.log(item)
+    setfruitArray(fruitArray.filter((fruit) => fruit !== item))
+  }
   
   
 
@@ -25,8 +30,17 @@ function App() {
       <div className='card'>
 
         <h2>Items to sell:</h2>
-        <ItemList itemArray={fruitArray}></ItemList>
+        {/* <ItemList itemArray={fruitArray} status={setfruitArray}></ItemList>  */}
         {/* <div className='quote'>Pramodh</div>  */}
+
+        <ul>
+          {(fruitArray.length > 0) && fruitArray.map((item,index) =>(
+            <ul key={index}>{item}<button className="delete-button" onClick={()=>handleClickCloseButton(item)}>-</button></ul>
+
+          ))}
+
+        </ul>
+
         <input type='text' className='quote' onChange={(e)=>setNewItem(e.target.value)} value={newItem} ></input>
         <button onClick={handleClick} >Add Item</button>
         

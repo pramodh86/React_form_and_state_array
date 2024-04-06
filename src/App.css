@@ -29,3 +29,9 @@ body{
   margin-top: 60px;
   outline: none;
 }
+
+.delete-button{
+  background-color: blueviolet;
+  border: none;
+  outline: none;
+}
